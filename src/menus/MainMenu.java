@@ -26,11 +26,4 @@ public class MainMenu {
         }
         scanner.close();
     }
-
-    private void loginWainer() {
-    }
-    private void loginCook(){
-    }
-    private void register(){
-    }
 }
