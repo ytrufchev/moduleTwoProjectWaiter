@@ -29,7 +29,7 @@ public class Table {
     public String toString() {
         return "Table {" +
                 "Number of table = " + numberOfTable +
-                ", Status 'free' = " + statusFree +
+                ", OrderStatus 'free' = " + statusFree +
                 '}';
     }
 
