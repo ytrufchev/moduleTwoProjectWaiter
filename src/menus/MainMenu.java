@@ -8,6 +8,10 @@ import java.util.Scanner;
 
 public class MainMenu {
     public static void mainMenu() throws FileNotFoundException, NoSuchAlgorithmException {
+        //
+        DisplayMenu displayMenu = new DisplayMenu();
+        displayMenu.displayMenu();
+        //
         RegisterMenu registerMenu = new RegisterMenu();
         LoginMenu loginMenu = new LoginMenu();
         System.out.flush();
