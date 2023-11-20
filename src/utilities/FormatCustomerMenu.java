@@ -1,12 +1,14 @@
 package utilities;
 
-public class Formatter {
-    public String formatter(String content, String title) {
+import java.util.ArrayList;
+
+public class FormatCustomerMenu {
+    public String formatter(ArrayList<String> content, String title) {
         StringBuilder sb = new StringBuilder();
         int frameWidth = 120;
         String frameGlyph = "*";
         String border = frameGlyph + frameGlyph.repeat(frameWidth - 2) + frameGlyph + "\n";
-        String[] lines = content.split("\n");
+        String[] lines = String.valueOf(content).split("\n");
 
         sb.append(border);
 
