@@ -75,7 +75,7 @@ public class RegisterMenu {
         }
     }
     public void addNewUser() throws NoSuchAlgorithmException, FileNotFoundException {
-        String fileName = "src/accounts/accounts.csv";
+        String fileName = "src/persistent/accounts.csv";
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         byte[] hash = digest.digest(getPassOne().getBytes(StandardCharsets.UTF_8));
 

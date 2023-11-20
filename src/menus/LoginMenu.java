@@ -53,7 +53,7 @@ public class LoginMenu {
         }
     }
     public boolean checkCredentials() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/accounts/accounts.csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/persistent/accounts.csv"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] values = line.split(",");
