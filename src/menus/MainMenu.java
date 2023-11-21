@@ -1,6 +1,7 @@
 package menus;
 
 import utilities.Formatter;
+import utilities.PopulateItemsMenu;
 
 import java.io.FileNotFoundException;
 import java.security.NoSuchAlgorithmException;
