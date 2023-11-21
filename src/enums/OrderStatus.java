@@ -1,9 +1,10 @@
 package enums;
 
 public enum OrderStatus {
-    COOCKING,
+    COOKING,
     PREPARED,
     SERVED,
     PAID,
     NON_PROCESSED
+
 }

@@ -5,6 +5,7 @@ import entities.Order;
 import entities.Table;
 import enums.OrderStatus;
 import menus.DisplayMenu;
+import utilities.ChangeOrderStatus;
 import utilities.Formatter;
 import utilities.PopulateItemsMenu;
 import java.time.LocalDate;
@@ -14,6 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+
+import utilities.WriteOrderToFile;
+import utilities.WriteOrderToFile;
+
 
 public class NewOrderMenu {
     public static void  selectTable(){
@@ -53,8 +58,8 @@ public class NewOrderMenu {
             } else {
                 System.out.println("Invalid selection. Please enter a valid item number.");
             }
-            Order order = new Order(new Table(table, false), date, time, total, OrderStatus.NON_PROCESSED, items);
-            System.out.println(order);
         }
+        Order order = new Order(new Table(table, false), date, time, total, OrderStatus.NON_PROCESSED, items);
+        WriteOrderToFile.writeOrderToFile(order, "./src/persistent/orders.csv");
     }
 }
