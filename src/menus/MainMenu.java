@@ -1,6 +1,7 @@
 package menus;
 
 import utilities.Formatter;
+import utilities.PopulateItemsMenu;
 
 import java.io.FileNotFoundException;
 import java.security.NoSuchAlgorithmException;
@@ -8,10 +9,6 @@ import java.util.Scanner;
 
 public class MainMenu {
     public static void mainMenu() throws FileNotFoundException, NoSuchAlgorithmException {
-        //
-        DisplayMenu displayMenu = new DisplayMenu();
-        displayMenu.displayMenu();
-        //
         RegisterMenu registerMenu = new RegisterMenu();
         LoginMenu loginMenu = new LoginMenu();
         System.out.flush();

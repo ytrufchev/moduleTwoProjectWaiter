@@ -6,6 +6,7 @@ import javax.xml.crypto.Data;
 import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
@@ -14,10 +15,10 @@ public class Order {
     private LocalTime time;
     private double sumPrice;
     private OrderStatus status;
-    private List<String> menuItems;
+    private ArrayList<String> menuItems;
 
     // Конструктор
-    public Order(Table table, LocalDate date, LocalTime time, double sumPrice, OrderStatus status, List<String> menuItems) {
+    public Order(Table table, LocalDate date, LocalTime time, double sumPrice, OrderStatus status, ArrayList<String> menuItems) {
         this.table = table;
         this.date = date;
         this.time = time;
@@ -71,7 +72,7 @@ public class Order {
         return menuItems;
     }
 
-    public void setMenuItems(List<String> menuItems) {
+    public void setMenuItems(ArrayList<String> menuItems) {
         this.menuItems = menuItems;
     }
 

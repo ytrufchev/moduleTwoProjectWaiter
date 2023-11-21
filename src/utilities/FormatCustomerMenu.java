@@ -8,7 +8,7 @@ public class FormatCustomerMenu {
         int frameWidth = 120;
         String frameGlyph = "*";
         String border = frameGlyph + frameGlyph.repeat(frameWidth - 2) + frameGlyph + "\n";
-        String[] lines = String.valueOf(content).split("\n");
+        String[] lines = content.toArray(new String[0]);
 
         sb.append(border);
 
@@ -19,7 +19,7 @@ public class FormatCustomerMenu {
 
         sb.append(border);
 
-        for (String line : lines) {
+        for (String line : content) {
             int leftPadding = 42;
             int rightPadding = frameWidth - 2 - line.length() - leftPadding;
             String formattedLine = frameGlyph + " ".repeat(leftPadding) + line + " ".repeat(rightPadding) + frameGlyph + "\n";

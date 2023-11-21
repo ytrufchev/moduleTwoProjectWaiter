@@ -47,7 +47,14 @@ public class LoginMenu {
         setPassword(hexString.toString());
 
         if (checkCredentials()) {
-            System.out.println("Login successful as a " + role);
+            if(role.equalsIgnoreCase("waiter")){
+                WaiterMenu waiterMenu = new WaiterMenu();
+                waiterMenu.waiterMenu();
+            }
+            else if(role.equalsIgnoreCase("cook")){
+//                CookMenu cookMenu = new CookMenu();
+//                cookMenu.cookMenu();
+            }
         } else {
             System.out.println("Login failed. Username or password is incorrect.");
         }

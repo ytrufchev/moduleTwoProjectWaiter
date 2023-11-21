@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class ValidateUsername {
     public boolean ValidateUsername(String username) throws FileNotFoundException {
-        String fileName = "src/accounts/accounts.csv";
+        String fileName = "src/persistent/accounts.csv";
 
         try (
                 BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
