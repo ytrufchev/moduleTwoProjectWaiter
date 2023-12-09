@@ -1,13 +1,10 @@
 package utilities;
 
 import entities.Order;
-import entities.Table;
 import enums.OrderStatus;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class ChangeOrderStatus {
@@ -31,15 +28,13 @@ public class ChangeOrderStatus {
             Scanner sc = new Scanner(System.in);
             int selection = sc.nextInt();
             if (selection > 0 && selection <= orders.size()) {
-                System.out.println(formatter.formatter("1. Cooking\n2. Prepared\n3. Served\n4. Paid\n5. Non processed", "Order statuses"));
+                System.out.println(formatter.formatter("1. Served\n2. Cooking\n3. Non processed", "Order statuses"));
                 System.out.println("Select new status: ");
                 int status = sc.nextInt();
                 switch (status) {
-                    case 1 : orders.get(selection-1).setStatus(OrderStatus.COOKING); break;
-                    case 2 : orders.get(selection-1).setStatus(OrderStatus.PREPARED); break;
-                    case 3 : orders.get(selection-1).setStatus(OrderStatus.SERVED); break;
-                    case 4 : orders.get(selection-1).setStatus(OrderStatus.PAID); break;
-                    case 5 : orders.get(selection-1).setStatus(OrderStatus.NON_PROCESSED); break;
+                    case 1 : orders.get(selection-1).setStatus(OrderStatus.SERVED); break;
+                    case 2 : orders.get(selection-1).setStatus(OrderStatus.PAID); break;
+                    case 3 : orders.get(selection-1).setStatus(OrderStatus.NON_PROCESSED); break;
                     default:
                         System.out.println("something is wrong"); break;
                 }
