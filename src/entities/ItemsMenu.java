@@ -39,4 +39,11 @@ public class ItemsMenu implements Comparable{
     public int compareTo(Object o) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return type + ',' +
+                name + ',' +
+                price;
+    }
 }
