@@ -28,7 +28,7 @@ public class LoginMenu {
         this.password = password;
     }
 
-    public void loginMenu(String role) throws NoSuchAlgorithmException {
+    public void loginMenu(String role) throws NoSuchAlgorithmException, FileNotFoundException {
         System.out.flush();
         String roleMenu = "";
         String title = "Login as " + role;
