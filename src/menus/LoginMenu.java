@@ -47,18 +47,18 @@ public class LoginMenu {
         setPassword(hexString.toString());
 
         if (checkCredentials()) {
-            if(role.equalsIgnoreCase("waiter")){
+            if (role.equalsIgnoreCase("waiter")) {
                 WaiterMenu waiterMenu = new WaiterMenu();
                 waiterMenu.waiterMenu();
-            }
-            else if(role.equalsIgnoreCase("cook")){
-//                CookMenu cookMenu = new CookMenu();
-//                cookMenu.cookMenu();
+            } else if (role.equalsIgnoreCase("cook")) {
+                CookMenu cookMenu = new CookMenu();
+                cookMenu.cookMenu();
             }
         } else {
             System.out.println("Login failed. Username or password is incorrect.");
         }
     }
+
     public boolean checkCredentials() {
         try (BufferedReader reader = new BufferedReader(new FileReader("src/persistent/accounts.csv"))) {
             String line;
