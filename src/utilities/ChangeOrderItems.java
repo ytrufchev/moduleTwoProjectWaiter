@@ -3,11 +3,14 @@ package utilities;
 import entities.ItemsMenu;
 import entities.Order;
 import menus.DisplayMenu;
+import menus.WaiterMenu;
 
 import java.awt.*;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +18,8 @@ import java.util.Scanner;
 public class ChangeOrderItems {
     private ArrayList<Order> orders;
 
-    public void changeOrderItems() {
+    public void changeOrderItems() throws FileNotFoundException, NoSuchAlgorithmException {
+        WaiterMenu waiterMenu = new WaiterMenu();
         ReadOrdersFromFile readOrdersFromFile = new ReadOrdersFromFile();
         this.orders = readOrdersFromFile.readOrdersFromFile();
         FormatOrdersMenu formatOrdersMenu = new FormatOrdersMenu();
@@ -30,7 +34,7 @@ public class ChangeOrderItems {
                 order = orders.get(selection - 1).getMenuItems().get(i).replace("[", "");
             }
             System.out.println(formatOrderItems.formatOrderItems(orders.get(selection - 1), "items in the order"));
-            System.out.println("1. Add item\n2. Remove item");
+            System.out.println("1. Add item\n2. Remove item\n3. Back");
             int operationIndex = sc.nextInt();
             switch (operationIndex) {
                 case 1:
@@ -39,6 +43,8 @@ public class ChangeOrderItems {
                 case 2:
                     removeItemFromOrder(selection);
                     break;
+                case 3:
+                    waiterMenu.waiterMenu();
                 default:
                     System.out.println("Invalid operation");
             }
@@ -94,7 +100,7 @@ public class ChangeOrderItems {
         }
     }
 
-    private void addItemToOrder(int selection) {
+    private void addItemToOrder(int selection) throws FileNotFoundException, NoSuchAlgorithmException {
         PopulateItemsMenu populateItemsMenu = new PopulateItemsMenu();
         DisplayMenu displayMenu = new DisplayMenu();
         Scanner sc = new Scanner(System.in);

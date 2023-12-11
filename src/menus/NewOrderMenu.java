@@ -8,6 +8,9 @@ import menus.DisplayMenu;
 import utilities.ChangeOrderStatus;
 import utilities.Formatter;
 import utilities.PopulateItemsMenu;
+
+import java.io.FileNotFoundException;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -21,7 +24,7 @@ import utilities.WriteOrderToFile;
 
 
 public class NewOrderMenu {
-    public static void  selectTable(){
+    public static void  selectTable() throws FileNotFoundException, NoSuchAlgorithmException {
         Formatter formatter = new Formatter();
         String title = ("Select Table");
         String menu = "Select a table of 1 to 10";
@@ -31,7 +34,7 @@ public class NewOrderMenu {
         newOrderMenu(tableNumber);
     }
 
-    public static void newOrderMenu(int table) {
+    public static void newOrderMenu(int table) throws FileNotFoundException, NoSuchAlgorithmException {
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
         Formatter formatter = new Formatter();
@@ -61,5 +64,7 @@ public class NewOrderMenu {
         }
         Order order = new Order(new Table(table, false), date, time, total, OrderStatus.NON_PROCESSED, items);
         WriteOrderToFile.writeOrderToFile(order, "./src/persistent/orders.csv");
+        WaiterMenu waiterMenu = new WaiterMenu();
+        waiterMenu.waiterMenu();
     }
 }

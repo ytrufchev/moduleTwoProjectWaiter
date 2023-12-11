@@ -2,8 +2,10 @@ package utilities;
 
 import entities.Order;
 import enums.OrderStatus;
+import menus.WaiterMenu;
 
 import java.io.*;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,7 +13,7 @@ public class ChangeOrderStatus {
     private ArrayList<Order> orders;
     private ArrayList<Order> cookOrders;
 
-    public void changeOrderStatus(String role) {
+    public void changeOrderStatus(String role) throws FileNotFoundException, NoSuchAlgorithmException {
         ReadOrdersFromFile readOrdersFromFile = new ReadOrdersFromFile();
         this.orders = readOrdersFromFile.readOrdersFromFile();
         this.cookOrders = new ArrayList<>();
@@ -21,6 +23,7 @@ public class ChangeOrderStatus {
             }
         }
         if (role.equalsIgnoreCase("waiter")) {
+            WaiterMenu waiterMenu = new WaiterMenu();
             FormatOrdersMenu formatOrdersMenu = new FormatOrdersMenu();
             Formatter formatter = new Formatter();
             System.out.println(formatOrdersMenu.formatOrdersMenu(this.orders, "Change order status"));
@@ -40,6 +43,7 @@ public class ChangeOrderStatus {
                 }
                 updateOrderFile();
             }
+            waiterMenu.waiterMenu();
         } else if (role.equalsIgnoreCase("cook")) {
             FormatOrdersMenu formatOrdersMenu = new FormatOrdersMenu();
             Formatter formatter = new Formatter();
