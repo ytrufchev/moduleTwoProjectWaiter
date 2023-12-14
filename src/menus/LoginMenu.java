@@ -52,8 +52,8 @@ public class LoginMenu {
                 waiterMenu.waiterMenu();
             }
             else if(role.equalsIgnoreCase("cook")){
-//                CookMenu cookMenu = new CookMenu();
-//                cookMenu.cookMenu();
+                CookMenu cookMenu = new CookMenu();
+                cookMenu.cookMenu();
             }
         } else {
             System.out.println("Login failed. Username or password is incorrect.");
