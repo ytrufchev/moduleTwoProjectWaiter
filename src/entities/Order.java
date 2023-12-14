@@ -17,6 +17,7 @@ public class Order {
     private OrderStatus status;
     private ArrayList<String> menuItems;
 
+
     // Конструктор
     public Order(Table table, LocalDate date, LocalTime time, double sumPrice, OrderStatus status, ArrayList<String> menuItems) {
         this.table = table;
