@@ -50,6 +50,7 @@ public class LoginMenu {
             if (role.equalsIgnoreCase("waiter")) {
                 WaiterMenu waiterMenu = new WaiterMenu();
                 waiterMenu.waiterMenu();
+
             } else if (role.equalsIgnoreCase("cook")) {
                 CookMenu cookMenu = new CookMenu();
                 cookMenu.cookMenu();

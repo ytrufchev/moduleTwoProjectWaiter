@@ -34,15 +34,9 @@ public class DisplayMenu {
             lineNumber++;
         }
 
-        items.add(lineNumber + ". Confirm order");
+        items.add(lineNumber++ + ". Confirm order");
+        items.add(lineNumber++ + ". Cancel");
         FormatCustomerMenu formatCustomerMenu = new FormatCustomerMenu();
         System.out.println(formatCustomerMenu.formatter(items, "Items Menu"));
-        WaiterMenu waiterMenu = new WaiterMenu();
-        System.out.println("1. Back");
-        Scanner sc = new Scanner(System.in);
-        int selection = sc.nextInt();
-        if(selection == 1){
-            waiterMenu.waiterMenu();
-        }
     }
 }

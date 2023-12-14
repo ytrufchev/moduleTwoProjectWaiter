@@ -116,6 +116,10 @@ public class ChangeOrderItems {
                 System.out.println("Finished adding items.");
                 break;
             }
+            else if(newItemIndex == 25){
+                WaiterMenu waiterMenu = new WaiterMenu();
+                waiterMenu.waiterMenu();
+            }
 
             // Check if the newItemIndex is within the valid range
             if (newItemIndex > 0 && newItemIndex <= menuItems.size()) {

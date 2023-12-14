@@ -2,6 +2,7 @@ package utilities;
 
 import entities.Order;
 import enums.OrderStatus;
+import menus.CookMenu;
 import menus.WaiterMenu;
 
 import java.io.*;
@@ -12,25 +13,28 @@ import java.util.Scanner;
 public class ChangeOrderStatus {
     private ArrayList<Order> orders;
     private ArrayList<Order> cookOrders;
+    private int selected;
 
     public void changeOrderStatus(String role) throws FileNotFoundException, NoSuchAlgorithmException {
         ReadOrdersFromFile readOrdersFromFile = new ReadOrdersFromFile();
         this.orders = readOrdersFromFile.readOrdersFromFile();
         this.cookOrders = new ArrayList<>();
+        CookMenu cookMenu = new CookMenu();
+        WaiterMenu waiterMenu = new WaiterMenu();
         for (Order order: orders) {
             if(order.getStatus().toString().equals("NON_PROCESSED") || order.getStatus().toString().equals("COOKING") ){
                 this.cookOrders.add(order);
             }
         }
         if (role.equalsIgnoreCase("waiter")) {
-            WaiterMenu waiterMenu = new WaiterMenu();
             FormatOrdersMenu formatOrdersMenu = new FormatOrdersMenu();
             Formatter formatter = new Formatter();
             System.out.println(formatOrdersMenu.formatOrdersMenu(this.orders, "Change order status"));
             System.out.println("Enter number of order to change its status: ");
             Scanner sc = new Scanner(System.in);
             int selection = sc.nextInt();
-            if (selection > 0 && selection <= orders.size()) {
+            this.selected = selection;
+            if (selection > 0 && selection <= orders.size() ) {
                 System.out.println(formatter.formatter("1. Served\n2. Cooking\n3. Non processed", "Order statuses"));
                 System.out.println("Select new status: ");
                 int status = sc.nextInt();
@@ -56,15 +60,23 @@ public class ChangeOrderStatus {
                 System.out.println("Select new status: ");
                 int status = sc.nextInt();
                 switch (status) {
-                    case 1 : orders.get(cookOrders.indexOf(selection-1)).setStatus(OrderStatus.COOKING); break;
-                    case 2 : orders.get(cookOrders.indexOf(selection-1)).setStatus(OrderStatus.PREPARED); break;
+                    case 1: orders.get(cookOrders.indexOf(cookOrders.get(selection - 1))).setStatus(OrderStatus.COOKING); break;
+                    case 2: orders.get(cookOrders.indexOf(cookOrders.get(selection - 1))).setStatus(OrderStatus.PREPARED); break;
                     default:
                         System.out.println("something is wrong"); break;
                 }
                 updateOrderFile();
             }
+            cookMenu.cookMenu();
         } else {
-            System.out.println("There's an issue with the roles");
+            if(role.equalsIgnoreCase("Cook")){
+                System.out.println("No orders for preparing");
+                cookMenu.cookMenu();
+            }
+            else {
+                System.out.println("No orders exist");
+                waiterMenu.waiterMenu();
+            }
         }
     }
 
