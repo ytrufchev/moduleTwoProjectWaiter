@@ -28,6 +28,10 @@ public class Order {
         this.menuItems = menuItems;
     }
 
+    public Order() {
+
+    }
+
 
     public Table getTable() {
         return table;
