@@ -87,7 +87,7 @@ public class ChangeOrderItems {
         return sb.toString();
     }
 
-    private void removeItemFromOrder(int selection) {
+    public void removeItemFromOrder(int selection) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the index of the item to remove: ");
         int itemIndex = sc.nextInt();
@@ -100,7 +100,7 @@ public class ChangeOrderItems {
         }
     }
 
-    private void addItemToOrder(int selection) throws FileNotFoundException, NoSuchAlgorithmException {
+    public void addItemToOrder(int selection) throws FileNotFoundException, NoSuchAlgorithmException {
         PopulateItemsMenu populateItemsMenu = new PopulateItemsMenu();
         DisplayMenu displayMenu = new DisplayMenu();
         Scanner sc = new Scanner(System.in);
