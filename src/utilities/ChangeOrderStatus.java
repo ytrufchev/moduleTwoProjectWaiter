@@ -70,7 +70,7 @@ public class ChangeOrderStatus {
             cookMenu.cookMenu();
         } else {
             if(role.equalsIgnoreCase("Cook")){
-                System.out.println("No orders for preparing");
+                System.out.println("No orders exist");
                 cookMenu.cookMenu();
             }
             else {

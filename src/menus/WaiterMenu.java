@@ -13,6 +13,7 @@ public class WaiterMenu {
 
     public void waiterMenu() throws FileNotFoundException, NoSuchAlgorithmException {
         ChangeOrderStatus changeOrderStatus = new ChangeOrderStatus();
+        ChangeMenuItems changeMenuItems = new ChangeMenuItems();
         DisplayMenu displayMenu = new DisplayMenu();
         PopulateItemsMenu populateItemsMenu = new PopulateItemsMenu();
         ChangeOrderItems changeOrderItems = new ChangeOrderItems();
@@ -29,7 +30,7 @@ public class WaiterMenu {
             case 2 : changeOrderItems.changeOrderItems(); break;
             case 3 : changeOrderStatus.changeOrderStatus("waiter"); break;
             case 4 : displayMenu.displayMenu(PopulateItemsMenu); break;
-            case 5 : System.exit(0); break;
+            case 5 : changeMenuItems.modifyMenuItems(); break;
             case 6 : displayOrders.displayOrders(); break;
             case 7 : MainMenu.mainMenu();
             default : System.out.println("Invalid option"); break;

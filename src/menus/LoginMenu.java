@@ -1,5 +1,6 @@
 package menus;
 
+import com.sun.tools.javac.Main;
 import utilities.Formatter;
 
 import java.io.*;
@@ -57,6 +58,8 @@ public class LoginMenu {
             }
         } else {
             System.out.println("Login failed. Username or password is incorrect.");
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.mainMenu();
         }
     }
 

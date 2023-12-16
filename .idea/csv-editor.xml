@@ -10,13 +10,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/src/persistent/menu.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/src/persistent/menuItems.csv">
           <value>
             <Attribute>

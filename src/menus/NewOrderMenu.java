@@ -31,7 +31,13 @@ public class NewOrderMenu {
         System.out.println(formatter.formatter(menu, title));
         Scanner sc = new Scanner(System.in);
         int tableNumber = (sc.nextInt()-1);
-        newOrderMenu(tableNumber);
+        if(tableNumber > 0 && tableNumber <= 10) {
+            newOrderMenu(tableNumber);
+        }
+        else {
+            System.out.println("The table number should be between 1 and 10");
+            selectTable();
+        }
     }
 
     public static void newOrderMenu(int table) throws FileNotFoundException, NoSuchAlgorithmException {
