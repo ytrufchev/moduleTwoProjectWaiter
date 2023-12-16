@@ -38,5 +38,11 @@ public class DisplayMenu {
         items.add(lineNumber++ + ". Cancel");
         FormatCustomerMenu formatCustomerMenu = new FormatCustomerMenu();
         System.out.println(formatCustomerMenu.formatter(items, "Items Menu"));
+        Scanner sc = new Scanner(System.in);
+        int returnOption = sc.nextInt();
+        if(returnOption == 25){
+            WaiterMenu waiterMenu = new WaiterMenu();
+            waiterMenu.waiterMenu();
+        }
     }
 }

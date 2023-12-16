@@ -87,20 +87,31 @@ public class ChangeOrderItems {
         return sb.toString();
     }
 
-    private void removeItemFromOrder(int selection) {
+    public void removeItemFromOrder(int selection) throws FileNotFoundException, NoSuchAlgorithmException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the index of the item to remove: ");
-        int itemIndex = sc.nextInt();
-        if (itemIndex > 0 && itemIndex <= orders.get(selection - 1).getMenuItems().size()) {
-            orders.get(selection - 1).getMenuItems().remove(itemIndex - 1);
-            System.out.println("Item removed successfully.");
-            updateOrderFile();
-        } else {
-            System.out.println("Invalid item index.");
-        }
+        int itemIndex;
+
+        do {
+            System.out.println("Enter the index of the item to remove (or enter 0 to confirm): ");
+            itemIndex = sc.nextInt();
+
+            if (itemIndex > 0 && itemIndex <= orders.get(selection - 1).getMenuItems().size()) {
+                orders.get(selection - 1).getMenuItems().remove(itemIndex - 1);
+                System.out.println("Item removed successfully.");
+                updateOrderFile();
+            } else if (itemIndex == 0) {
+                System.out.println("Confirmation: Items removed.");
+                updateOrderFile();
+            } else {
+                System.out.println("Invalid item index. Please enter a valid index or 0 to confirm.");
+            }
+
+        } while (itemIndex != 0);
+        WaiterMenu waiterMenu = new WaiterMenu();
+        waiterMenu.waiterMenu();
     }
 
-    private void addItemToOrder(int selection) throws FileNotFoundException, NoSuchAlgorithmException {
+    public void addItemToOrder(int selection) throws FileNotFoundException, NoSuchAlgorithmException {
         PopulateItemsMenu populateItemsMenu = new PopulateItemsMenu();
         DisplayMenu displayMenu = new DisplayMenu();
         Scanner sc = new Scanner(System.in);
@@ -114,7 +125,9 @@ public class ChangeOrderItems {
 
             if (newItemIndex == 24) {
                 System.out.println("Finished adding items.");
-                break;
+                updateOrderFile();
+                WaiterMenu waiterMenu = new WaiterMenu();
+                waiterMenu.waiterMenu();
             }
             else if(newItemIndex == 25){
                 WaiterMenu waiterMenu = new WaiterMenu();
@@ -127,8 +140,6 @@ public class ChangeOrderItems {
                 orders.get(selection - 1).getMenuItems().add(newItem);
                 System.out.println("Item added successfully.");
                 updateOrderFile();
-            } else {
-                System.out.println("Invalid item number.");
             }
         }
 

@@ -1,2 +1,4 @@
-4,false,2023-12-13,07:09:49.980357,36.97,SERVED,[[[[Food,Vegetarian Thai Curry with Coconut Milk,13.99,     Food,Beef Broth with Dried Mushrooms,9.99,     Food,Prosciutto with Olives and Arugula,12.99, Food,Prosciutto with Olives and Arugula,12.99, Food,Alfredo Pasta with Salmon and Spinach,14.99]
-11,false,2023-12-13,07:10:31.894408,17.98,NON_PROCESSED,[[[[Food,Creamy Pumpkin Soup with Caramelized Walnuts,8.99,     Food,Creamy Pumpkin Soup with Caramelized Walnuts,8.99]
+24,false,2023-12-13,07:09:49.980357,36.97,NON_PROCESSED,      Beverages,Craft Beer Selection,5.99,      Beverages,House Red Wine (per glass),7.99]
+31,false,2023-12-13,07:10:31.894408,17.98,SERVED,[[[[[[[[[[[[[Food,Creamy Pumpkin Soup with Caramelized Walnuts,8.99,                         Food,Creamy Pumpkin Soup with Caramelized Walnuts,8.99]
+19,false,2023-12-15,21:12:54.355903,40.96,NON_PROCESSED,[[[Food,Garlic Fried Dough Balls,10.99,              Food,Beef Broth with Dried Mushrooms,9.99,              Food,Prosciutto with Olives and Arugula,12.99,              Beverages,Berry Bliss Mocktail,6.99]
+9,false,2023-12-16,10:05:28.268819,10.99,NON_PROCESSED,[Food,Garlic Fried Dough Balls,10.99]

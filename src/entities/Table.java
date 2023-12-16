@@ -1,5 +1,10 @@
 package entities;
 
+import menus.NewOrderMenu;
+
+import java.io.FileNotFoundException;
+import java.security.NoSuchAlgorithmException;
+
 public class Table {
     private int numberOfTable;
     private boolean statusFree;
@@ -13,8 +18,13 @@ public class Table {
         return numberOfTable;
     }
 
-    public void setNumberOfTable(int numberOfTable) {
-        this.numberOfTable = numberOfTable;
+    public void setNumberOfTable(int numberOfTable) throws FileNotFoundException, NoSuchAlgorithmException {
+        if(numberOfTable > 0 && numberOfTable <= 10) {
+            this.numberOfTable = numberOfTable;
+        }
+        else {
+            NewOrderMenu.selectTable();
+        }
     }
 
     public boolean isStatusFree() {
