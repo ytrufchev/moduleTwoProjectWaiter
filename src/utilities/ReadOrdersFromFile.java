@@ -54,7 +54,6 @@ public class ReadOrdersFromFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    return orders;
+        return orders;
     }
-
 }

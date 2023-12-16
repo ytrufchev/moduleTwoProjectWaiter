@@ -90,6 +90,7 @@ public class ChangeOrderItems {
         return sb.toString();
     }
 
+
     public void removeItemFromOrder(int selection) throws FileNotFoundException, NoSuchAlgorithmException {
         Scanner sc = new Scanner(System.in);
         int itemIndex;

@@ -16,7 +16,7 @@ public class ChangeMenuItems {
         this.menuItems = readMenuFromFile();
     }
 
-    private List<ItemsMenu> readMenuFromFile() {
+    public List<ItemsMenu> readMenuFromFile() {
         List<ItemsMenu> items = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("./src/persistent/menuItems.csv"))) {
             String line;
@@ -91,7 +91,7 @@ public class ChangeMenuItems {
         }
     }
 
-    private void updateMenuFile() {
+    public void updateMenuFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("./src/persistent/menuItems.csv"))) {
             for (ItemsMenu item : menuItems) {
                 String itemString = itemToString(item);
@@ -103,7 +103,7 @@ public class ChangeMenuItems {
         }
     }
 
-    private String itemToString(ItemsMenu item) {
+    public String itemToString(ItemsMenu item) {
         return item.getType() + "," + item.getName() + "," + item.getPrice();
     }
 }
