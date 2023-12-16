@@ -16,7 +16,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ChangeOrderItems {
-    private ArrayList<Order> orders;
+    public ArrayList<Order> orders;
+    public void setOrders(ArrayList<Order> orders) {
+        this.orders = orders;
+    }
 
     public void changeOrderItems() throws FileNotFoundException, NoSuchAlgorithmException {
         WaiterMenu waiterMenu = new WaiterMenu();
