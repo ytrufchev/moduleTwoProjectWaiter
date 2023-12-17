@@ -21,6 +21,7 @@ class ChangeMenuItemsTest {
     }
 
     @Test
+
      void testUpdateMenuFile() throws IOException, NoSuchAlgorithmException {
         String tempFilePath = "./src/persistent/tempMenuItems.csv";
         Files.copy(Paths.get("./src/persistent/menuItems.csv"), Paths.get(tempFilePath));

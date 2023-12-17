@@ -10,6 +10,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 public class LoginMenu {
+
     String username;
     String password;
 
