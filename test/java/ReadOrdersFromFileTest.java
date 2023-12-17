@@ -24,6 +24,7 @@ class ReadOrdersFromFileTest {
         assertEquals(2, orders.size()); // Assuming two valid entry in the test file
         Order order = orders.get(0);
         assertEquals(3, order.getTable().getNumberOfTable()); // Assuming the test file has "1" for table number
+
         assertFalse(order.getTable().isStatusFree()); // Assuming the test file has "true" for table status
         assertEquals(OrderStatus.SERVED, order.getStatus()); // Assuming the test file has "COOKING" for status
 
