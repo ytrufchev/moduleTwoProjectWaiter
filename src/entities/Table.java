@@ -15,17 +15,27 @@ public class Table {
         this.numberOfTable = numberOfTable;
         this.statusFree = statusFree;
     }
+    public Table(){
+        this.numberOfTable = 1;
+        this.statusFree = false;
+    }
 
     public int getNumberOfTable() {
         return numberOfTable;
     }
 
-    public void setNumberOfTable(int numberOfTable) throws FileNotFoundException, NoSuchAlgorithmException {
+    public void setNumberOfTable(int numberOfTable){
         if(numberOfTable > 0 && numberOfTable <= 10) {
             this.numberOfTable = numberOfTable;
         }
         else {
-            NewOrderMenu.selectTable();
+            try {
+                NewOrderMenu.selectTable();
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
