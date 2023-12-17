@@ -29,7 +29,7 @@ public class WaiterMenu {
             case 1 : NewOrderMenu.selectTable(); break;
             case 2 : changeOrderItems.changeOrderItems(); break;
             case 3 : changeOrderStatus.changeOrderStatus("waiter"); break;
-            case 4 : displayMenu.displayMenu(PopulateItemsMenu); break;
+            case 4 : displayMenu.displayMenuOption(PopulateItemsMenu); break;
             case 5 : changeMenuItems.modifyMenuItems(); break;
             case 6 : displayOrders.displayOrders(); break;
             case 7 : MainMenu.mainMenu();

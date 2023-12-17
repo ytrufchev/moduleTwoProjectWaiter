@@ -56,4 +56,16 @@ public class ReadOrdersFromFile {
         }
         return orders;
     }
+    public static List<Table> getTablesWithFalseStatus() {
+        List<Table> tablesWithFalseStatus = new ArrayList<>();
+        ArrayList<Order> orders = readOrdersFromFile();
+
+        for (Order order : orders) {
+            Table table = order.getTable();
+            if (!table.isStatusFree()) {
+                tablesWithFalseStatus.add(table);
+            }
+        }
+        return tablesWithFalseStatus;
+    }
 }
