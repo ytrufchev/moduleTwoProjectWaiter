@@ -30,7 +30,7 @@ public class NewOrderMenu {
         String menu = "Select a table of 1 to 10";
         System.out.println(formatter.formatter(menu, title));
         Scanner sc = new Scanner(System.in);
-        int tableNumber = (sc.nextInt()-1);
+        int tableNumber = (sc.nextInt());
         if(tableNumber > 0 && tableNumber <= 10) {
             newOrderMenu(tableNumber);
         }
@@ -53,14 +53,13 @@ public class NewOrderMenu {
         ArrayList<String> items = new ArrayList<>();
         while (!isConfirmed) {
             displayMenu.displayMenu(menu);
-            System.out.println(formatter.formatter(String.valueOf(total), "Total"));
+            System.out.print(formatter.formatter(String.valueOf(total), "Total"));
             System.out.println("Enter the number of the item you want to add to your order");
-
             int selection = scanner.nextInt();
             if (selection == menu.size()+1) {
                 isConfirmed = true;
                 System.out.println("Order confirmed!");
-            } else if (selection >= 0 && selection <= menu.size()+1) {
+            } else if (selection >= 0 && selection <= menu.size()-1) {
                 ItemsMenu selectedMenu = menu.get(selection-1);
                 total += Double.parseDouble(selectedMenu.getPrice());
                 items.add(selectedMenu.getType().toString() + "," + selectedMenu.getName().toString() + "," + selectedMenu.getPrice().toString());

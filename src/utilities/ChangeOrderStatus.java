@@ -35,13 +35,14 @@ public class ChangeOrderStatus {
             int selection = sc.nextInt();
             this.selected = selection;
             if (selection > 0 && selection <= orders.size() ) {
-                System.out.println(formatter.formatter("1. Served\n2. Cooking\n3. Non processed", "Order statuses"));
+                System.out.println(formatter.formatter("1. Served\n2. Cooking\n3. Non processed\n4. Paid", "Order statuses"));
                 System.out.println("Select new status: ");
                 int status = sc.nextInt();
                 switch (status) {
                     case 1 : orders.get(selection-1).setStatus(OrderStatus.SERVED); break;
-                    case 2 : orders.get(selection-1).setStatus(OrderStatus.PAID); break;
+                    case 2 : orders.get(selection-1).setStatus(OrderStatus.COOKING); break;
                     case 3 : orders.get(selection-1).setStatus(OrderStatus.NON_PROCESSED); break;
+                    case 4: orders.get(selection-1).setStatus(OrderStatus.PAID); orders.get(selection-1).getTable().setStatusFree(true); break;
                     default:
                         System.out.println("something is wrong"); break;
                 }

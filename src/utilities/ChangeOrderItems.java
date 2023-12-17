@@ -17,6 +17,7 @@ import java.util.Scanner;
 
 public class ChangeOrderItems {
     public ArrayList<Order> orders;
+
     public void setOrders(ArrayList<Order> orders) {
         this.orders = orders;
     }
