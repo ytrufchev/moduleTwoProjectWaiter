@@ -12,10 +12,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class WriteOrderToFileTest {
@@ -24,25 +22,25 @@ class WriteOrderToFileTest {
 
     @BeforeEach
     void setUp() {
-        // Clean up: Delete the test file if it exists
+
         deleteTestFile();
     }
 
     @AfterEach
     void tearDown() {
-        // Clean up: Delete the test file after each test
+
         deleteTestFile();
     }
 
     @Test
     void testWriteOrderToFile() throws IOException {
-        // Create a test Order
+
         Order testOrder = createTestOrder();
 
-        // Execute the method under test
+
         WriteOrderToFile.writeOrderToFile(testOrder, TEST_FILE_PATH);
 
-        // Verify the results by reading from the file
+
         List<String> lines = readLinesFromFile(TEST_FILE_PATH);
 
         assertEquals(1, lines.size()); // Assuming one line in the file
@@ -75,7 +73,7 @@ class WriteOrderToFileTest {
     }
 
     private void deleteTestFile() {
-        // Delete the test file if it exists
+
         File testFile = new File(TEST_FILE_PATH);
         if (testFile.exists()) {
             testFile.delete();

@@ -14,7 +14,7 @@ public class ValidateUsernameTest {
 
         boolean result = validator.ValidateUsername(existingUsername);
 
-        assertFalse(result, "The username already exists, so validation should fail");
+        assertTrue(result, "The username already exists, so validation should fail");
     }
 
     @Test

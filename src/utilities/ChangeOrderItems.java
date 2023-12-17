@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ChangeOrderItems {
-    public ArrayList<Order> orders;
+    public ArrayList<Order> orders=new ArrayList<Order>();
     public void setOrders(ArrayList<Order> orders) {
         this.orders = orders;
     }

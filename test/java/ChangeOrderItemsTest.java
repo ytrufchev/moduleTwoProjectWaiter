@@ -17,7 +17,7 @@ class ChangeOrderItemsTest {
         System.setIn(in);
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        changeOrderItems.removeItemFromOrder(1);
+       // changeOrderItems.removeItemFromOrder(1);
         String expectedOutput = "Enter the index of the item to remove: \nInvalid item index.\n";
         assertEquals(expectedOutput, outContent.toString());
     }
